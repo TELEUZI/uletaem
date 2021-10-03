@@ -1,0 +1,19 @@
+header {
+  display: flex;
+}
+.website-name{
+  color: #FFA902;
+}
+.logo-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.logo {
+  width:76px;
+  height: 54px;
+  background-image: url(./../public/logo.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}

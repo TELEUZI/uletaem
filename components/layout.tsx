@@ -1,4 +1,5 @@
-import Footer from './footer';
+import React from 'react';
+import Header from './header';
 import Meta from './meta';
 
 export default function Layout({ children }: any) {
@@ -6,9 +7,9 @@ export default function Layout({ children }: any) {
     <>
       <Meta />
       <div className="min-h-screen">
+        <Header />
         <main>{children}</main>
       </div>
-      <Footer />
     </>
   );
 }

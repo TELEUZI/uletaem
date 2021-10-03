@@ -1,12 +1,14 @@
+/* eslint-disable no-unused-vars */
 import { getPreviewPostBySlug } from '../../lib/api';
 
+// eslint-disable-next-line consistent-return
 export default async function preview(
   req: { query: { secret: string | undefined; slug: any } },
   res: {
     status: (arg0: number) => {
       (): any;
       new (): any;
-      json: { (arg0: { message: string }): any; new (): any };
+      json: { (arg1: { message: string }): any; new (): any };
     };
     setPreviewData: (arg0: {}) => void;
     writeHead: (arg0: number, arg1: { Location: string }) => void;

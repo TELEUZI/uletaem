@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['uletaem-strapi.herokuapp.com'],
+    domains: ['uletaem-strapi.herokuapp.com', 'localhost'],
   },
 };

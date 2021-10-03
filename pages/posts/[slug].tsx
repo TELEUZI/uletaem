@@ -5,7 +5,6 @@ import Head from 'next/head';
 import { getPostAndMorePosts, getAllPostsWithSlug } from '../../lib/api';
 import { CMS_NAME } from '../../lib/constants';
 import Container from '../../components/container';
-import Header from '../../components/header';
 import Layout from '../../components/layout';
 import MoreStories from '../../components/more-stories';
 import PostBody from '../../components/post-body';
@@ -27,7 +26,6 @@ export default function Post({ post, morePosts, preview }: any) {
         <meta property="og:image" content={post.ogImage.url} />
       </Head>
       <Container>
-        <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (
@@ -53,7 +51,7 @@ export default function Post({ post, morePosts, preview }: any) {
 export async function getStaticProps({ params, preview = null }: any) {
   const data = await getPostAndMorePosts(params.slug, preview);
   const content = 'fgggggggggg';
-
+  console.log(data);
   return {
     props: {
       preview,

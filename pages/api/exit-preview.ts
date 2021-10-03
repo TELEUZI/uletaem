@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export default async function exit(
   _: any,
   res: {
