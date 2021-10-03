@@ -1,19 +1,19 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import React from 'react'
-import Container from '../components/container'
-import HeroPost from '../components/hero-post'
-import Intro from '../components/intro'
-import Layout from '../components/layout'
-import MoreStories from '../components/more-stories'
-import { getAllPostsForHome } from '../lib/api'
-import { CMS_NAME } from '../lib/constants'
-import styles from '../styles/Home.module.css'
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import Image from 'next/image';
+import React from 'react';
+import Container from '../components/container';
+import HeroPost from '../components/hero-post';
+import Intro from '../components/intro';
+import Layout from '../components/layout';
+import MoreStories from '../components/more-stories';
+import { getAllPostsForHome } from '../lib/api';
+import { CMS_NAME } from '../lib/constants';
+import styles from '../styles/Home.module.css';
 
 export function Home({ allPosts, preview }: any) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+  const heroPost = allPosts[0];
+  const morePosts = allPosts.slice(1);
   return (
     <>
       <Layout preview={preview}>
@@ -36,13 +36,13 @@ export function Home({ allPosts, preview }: any) {
         </Container>
       </Layout>
     </>
-  )
+  );
 }
 
 export async function getStaticProps({ preview = null }) {
-  const allPosts = (await getAllPostsForHome(preview)) || []
+  const allPosts = (await getAllPostsForHome(preview)) || [];
   return {
     props: { allPosts, preview },
-  }
+  };
 }
-export default Home
+export default Home;

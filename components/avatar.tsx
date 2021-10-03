@@ -1,7 +1,7 @@
-import Image from 'next/image'
+import Image from 'next/image';
 
-export default function Avatar({ name, picture }:any) {
-  const url = picture.url ?? picture[0].url
+export default function Avatar({ name, picture }: any) {
+  const url = picture.url ?? picture[0].url;
 
   return (
     <div className="flex items-center">
@@ -17,5 +17,5 @@ export default function Avatar({ name, picture }:any) {
       </div>
       <div className="text-xl font-bold">{name}</div>
     </div>
-  )
+  );
 }

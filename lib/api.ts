@@ -8,15 +8,15 @@ async function fetchAPI(query: string, { variables }: any = {}) {
       query,
       variables,
     }),
-  })
+  });
 
-  const json = await res.json()
+  const json = await res.json();
   if (json.errors) {
-    console.error(json.errors)
-    throw new Error('Failed to fetch API')
+    console.error(json.errors);
+    throw new Error('Failed to fetch API');
   }
 
-  return json.data
+  return json.data;
 }
 
 export async function getPreviewPostBySlug(slug: any) {
@@ -34,9 +34,9 @@ export async function getPreviewPostBySlug(slug: any) {
           slug,
         },
       },
-    }
-  )
-  return data?.posts[0]
+    },
+  );
+  return data?.posts[0];
 }
 
 export async function getAllPostsWithSlug() {
@@ -46,8 +46,8 @@ export async function getAllPostsWithSlug() {
         slug
       }
     }
-  `)
-  return data?.allPosts
+  `);
+  return data?.allPosts;
 }
 
 export async function getAllPostsForHome(preview: any) {
@@ -77,9 +77,9 @@ export async function getAllPostsForHome(preview: any) {
           ...(preview ? {} : { status: 'published' }),
         },
       },
-    }
-  )
-  return data?.posts
+    },
+  );
+  return data?.posts;
 }
 
 export async function getPostAndMorePosts(slug: any, preview: any) {
@@ -134,7 +134,7 @@ export async function getPostAndMorePosts(slug: any, preview: any) {
           slug_ne: slug,
         },
       },
-    }
-  )
-  return data
+    },
+  );
+  return data;
 }
