@@ -5,6 +5,7 @@ export default function PostBody({ content }: any) {
     <div className="max-w-2xl mx-auto">
       <div
         className={markdownStyles.markdown}
+        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: content }}
       />
     </div>

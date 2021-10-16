@@ -23,7 +23,7 @@ export default function Post({ post, morePosts, preview }: any) {
         <title>
           {post.title} | Next.js Blog Example with {CMS_NAME}
         </title>
-        <meta property="og:image" content={post.ogImage.url} />
+        <meta property="og:image" content={post.ogImage?.url} />
       </Head>
       <Container>
         {router.isFallback ? (
@@ -52,14 +52,13 @@ export default function Post({ post, morePosts, preview }: any) {
 
 export async function getStaticProps({ params, preview = null }: any) {
   const data = await getPostAndMorePosts(params.slug, preview);
-  const content = 'fgggggggggg';
-  console.log(data);
+  // const content = 'fgggggggggg';
   return {
     props: {
       preview,
       post: {
         ...data?.posts[0],
-        content,
+        ...data?.content,
       },
       morePosts: data?.morePosts,
     },

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -14,11 +14,12 @@
     "@typescript-eslint/eslint-plugin": "^4.32.0",
     "autoprefixer": "10.3.6",
     "classnames": "^2.3.1",
+    "cross-env": "^7.0.3",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-node": "^4.1.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "next": "11.1.2",
+    "next": "^12.0.3",
     "prettier": "^2.4.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -36,5 +37,8 @@
     "postcss": "8.3.8",
     "tailwindcss": "2.2.16",
     "typescript": "4.4.3"
+  },
+  "engines": {
+    "node": "15.x"
   }
 }
