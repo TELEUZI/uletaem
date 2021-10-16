@@ -17,7 +17,7 @@ export default function Post({ post, morePosts, preview }: any) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
-  return (
+  return post ? (
     <Layout preview={preview}>
       <Head>
         <title>
@@ -45,6 +45,8 @@ export default function Post({ post, morePosts, preview }: any) {
         )}
       </Container>
     </Layout>
+  ) : (
+    <>No posts</>
   );
 }
 
