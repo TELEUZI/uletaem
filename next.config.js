@@ -4,5 +4,4 @@ module.exports = {
   images: {
     domains: ['uletaem-strapi.herokuapp.com', 'localhost'],
   },
-  target: 'experimental-serverless-trace',
 };
