@@ -1,11 +1,8 @@
 import Image from 'next/image';
+import { DEFAULT_AVATAR_PATH } from '../lib/constants';
 
 export default function Avatar({ name, picture }: any) {
-  const url =
-    picture?.url ??
-    (picture?.[0]?.url ||
-      '/uploads/rodnoiy_peiyzag_kartina_maslom_90x60_79627a0afc.jpg');
-
+  const url = picture?.url ?? (picture?.[0]?.url || DEFAULT_AVATAR_PATH);
   return (
     <div className="flex items-center">
       <div className="w-12 h-12 relative mr-4">

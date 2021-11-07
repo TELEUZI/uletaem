@@ -36,6 +36,7 @@ export default function Post({ post, morePosts, preview }: any) {
                 coverImage={post.coverImage}
                 date={post.date}
                 author={post.author}
+                slug={post.slug}
               />
               <PostBody content={post.content} />
             </article>
@@ -50,16 +51,18 @@ export default function Post({ post, morePosts, preview }: any) {
   );
 }
 
-export async function getStaticProps({ params, preview = null }: any) {
+export async function getStaticProps({
+  params,
+  preview = false,
+}: {
+  params: { slug: string };
+  preview: boolean;
+}) {
   const data = await getPostAndMorePosts(params.slug, preview);
-  // const content = 'fgggggggggg';
   return {
     props: {
       preview,
-      post: {
-        ...data?.posts[0],
-        ...data?.content,
-      },
+      post: data?.post,
       morePosts: data?.morePosts,
     },
   };
@@ -67,8 +70,13 @@ export async function getStaticProps({ params, preview = null }: any) {
 
 export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug();
+  console.log(
+    allPosts?.posts?.map((post: { slug: any }) => `/posts/${post.slug}`),
+  );
   return {
-    paths: allPosts?.map((post: { slug: any }) => `/posts/${post.slug}`) || [],
+    paths:
+      allPosts?.posts?.map((post: { slug: any }) => `/posts/${post.slug}`) ||
+      [],
     fallback: true,
   };
 }

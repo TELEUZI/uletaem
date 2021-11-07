@@ -6,12 +6,22 @@ import Intro from '../components/intro';
 import Layout from '../components/layout';
 import MoreStories from '../components/more-stories';
 import { getAllPostsForHome } from '../lib/api';
-import { CMS_NAME } from '../lib/constants';
+import {
+  CMS_NAME,
+  DEFAULT_AVATAR_PATH,
+  DEFAULT_POST_IMAGE_PATH,
+} from '../lib/constants';
+import { Post } from '../models/post';
 import '../styles/Home.module.css';
 
-export function Home({ allPosts, preview }: any): React.ReactElement {
-  const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
+export function Home({
+  allPosts,
+  preview,
+}: {
+  allPosts: Post[];
+  preview: boolean;
+}): React.ReactElement {
+  const [heroPost, ...morePosts] = allPosts;
   return (
     <>
       <Layout preview={preview}>
@@ -23,9 +33,16 @@ export function Home({ allPosts, preview }: any): React.ReactElement {
           {heroPost && (
             <HeroPost
               title={heroPost.title}
-              coverImage={heroPost.coverImage}
+              coverImage={
+                heroPost.coverImage || { url: DEFAULT_POST_IMAGE_PATH }
+              }
               date={heroPost.date}
-              author={heroPost.author}
+              author={
+                heroPost.author || {
+                  name: 'Anonymous',
+                  picture: DEFAULT_AVATAR_PATH,
+                }
+              }
               slug={heroPost.slug}
               excerpt={heroPost.excerpt}
             />
@@ -37,7 +54,7 @@ export function Home({ allPosts, preview }: any): React.ReactElement {
   );
 }
 
-export async function getStaticProps({ preview = null }) {
+export async function getStaticProps({ preview = false }) {
   const allPosts = (await getAllPostsForHome(preview)) || [];
   return {
     props: { allPosts, preview },

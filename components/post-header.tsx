@@ -2,15 +2,16 @@ import Avatar from './avatar';
 import Date from './date';
 import CoverImage from './cover-image';
 import PostTitle from './post-title';
+import { DEFAULT_POST_IMAGE_PATH } from '../lib/constants';
+import { Post } from '../models/post';
 
-export default function PostHeader(
-  { title, coverImage, date, author } = {
-    title: '',
-    coverImage: { url: '' },
-    date: '',
-    author: { name: '', picture: '' },
-  },
-) {
+export default function PostHeader({
+  title,
+  coverImage,
+  date,
+  author,
+  slug,
+}: Omit<Post, 'excerpt'>) {
   return (
     <>
       <PostTitle>{title}</PostTitle>
@@ -18,7 +19,11 @@ export default function PostHeader(
         <Avatar name={author?.name} picture={author?.picture} />
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} url={coverImage?.url} />
+        <CoverImage
+          title={title}
+          url={coverImage ? coverImage?.url : DEFAULT_POST_IMAGE_PATH}
+          slug={slug}
+        />
       </div>
       <div className="max-w-2xl mx-auto">
         <div className="block md:hidden mb-6">

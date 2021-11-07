@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Avatar from './avatar';
 import Date from './date';
 import CoverImage from './cover-image';
+import { DEFAULT_POST_IMAGE_PATH } from '../lib/constants';
 
 export default function HeroPost(
   {
@@ -32,11 +33,7 @@ export default function HeroPost(
       <div className="mb-8 md:mb-16">
         <CoverImage
           title={title}
-          url={
-            coverImage
-              ? coverImage?.url
-              : '/uploads/rodnoiy_peiyzag_kartina_maslom_90x60_79627a0afc.jpg'
-          }
+          url={coverImage ? coverImage?.url : DEFAULT_POST_IMAGE_PATH}
           slug={slug}
         />
       </div>

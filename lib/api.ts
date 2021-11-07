@@ -1,3 +1,5 @@
+import { Post } from '../models/post';
+
 async function fetchAPI(query: string, { variables }: any = {}) {
   const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/graphql`, {
     method: 'POST',
@@ -19,7 +21,7 @@ async function fetchAPI(query: string, { variables }: any = {}) {
   return json.data;
 }
 
-export async function getPreviewPostBySlug(slug: any) {
+export async function getPreviewPostBySlug(slug: string | string[]) {
   const data = await fetchAPI(
     `
   query PostBySlug($where: JSON) {
@@ -36,6 +38,7 @@ export async function getPreviewPostBySlug(slug: any) {
       },
     },
   );
+  console.log(data, 'data');
   return data?.posts[0];
 }
 
@@ -47,11 +50,12 @@ export async function getAllPostsWithSlug() {
       }
     }
   `);
+  console.log(data);
   return data?.allPosts;
 }
 
-export async function getAllPostsForHome(preview: any) {
-  const data = await fetchAPI(
+export async function getAllPostsForHome(preview: any): Promise<Post[]> {
+  const data: { posts: Post[] } = await fetchAPI(
     `
     query Posts($where: JSON){
       posts(sort: "date:desc", limit: 10, where: $where) {
@@ -82,8 +86,16 @@ export async function getAllPostsForHome(preview: any) {
   return data?.posts;
 }
 
-export async function getPostAndMorePosts(slug: any, preview: any) {
-  const data = await fetchAPI(
+export async function getPostAndMorePosts(slug: string, preview: boolean) {
+  const data: {
+    posts: (Post & {
+      content: string;
+      ogImage: {
+        url: string;
+      };
+    })[];
+    morePosts: Post[];
+  } = await fetchAPI(
     `
   query PostBySlug($where: JSON, $where_ne: JSON) {
     posts(where: $where) {
@@ -136,5 +148,5 @@ export async function getPostAndMorePosts(slug: any, preview: any) {
       },
     },
   );
-  return data;
+  return { ...data, post: data.posts[0] };
 }

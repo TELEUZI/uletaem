@@ -1,12 +1,6 @@
-/* eslint-disable no-unused-vars */
-export default async function exit(
-  _: any,
-  res: {
-    clearPreviewData: () => void;
-    writeHead: (arg0: number, arg1: { Location: string }) => void;
-    end: () => void;
-  },
-) {
+import { NextApiRequest, NextApiResponse } from 'next';
+
+export default async function exit(_: NextApiRequest, res: NextApiResponse) {
   // Exit the current user from "Preview Mode". This function accepts no args.
   res.clearPreviewData();
 

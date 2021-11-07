@@ -1,19 +1,14 @@
 /* eslint-disable no-unused-vars */
+import { NextApiRequest, NextApiResponse } from 'next';
 import { getPreviewPostBySlug } from '../../lib/api';
 
+type ResponseData = {
+  message: string;
+};
 // eslint-disable-next-line consistent-return
 export default async function preview(
-  req: { query: { secret: string | undefined; slug: any } },
-  res: {
-    status: (arg0: number) => {
-      (): any;
-      new (): any;
-      json: { (arg1: { message: string }): any; new (): any };
-    };
-    setPreviewData: (arg0: {}) => void;
-    writeHead: (arg0: number, arg1: { Location: string }) => void;
-    end: () => void;
-  },
+  req: NextApiRequest,
+  res: NextApiResponse,
 ) {
   // Check the secret and next parameters
   // This secret should only be known to this API route and the CMS

@@ -2,7 +2,15 @@ import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function CoverImage({ title, url = '/', slug }: any) {
+export default function CoverImage({
+  title,
+  url = '/',
+  slug,
+}: {
+  title: string;
+  url: string;
+  slug: string;
+}) {
   const imageUrl = `${
     url.startsWith('/') ? process.env.NEXT_PUBLIC_STRAPI_API_URL : ''
   }${url}`;
