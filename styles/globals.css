@@ -14,7 +14,9 @@ a {
 * {
   box-sizing: border-box;
 }
-
+.bar-of-progress {
+  z-index: 50;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

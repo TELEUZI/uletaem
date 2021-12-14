@@ -4,21 +4,19 @@ import React from 'react';
 import Head from 'next/head';
 import { getPostAndMorePosts, getAllPostsWithSlug } from '../../lib/api';
 import { CMS_NAME } from '../../lib/constants';
-import Container from '../../components/container';
-import Layout from '../../components/layout';
+import Container from '../../components/Layout/container';
 import MoreStories from '../../components/more-stories';
-import PostBody from '../../components/post-body';
-import PostHeader from '../../components/post-header';
-import PostTitle from '../../components/post-title';
-import SectionSeparator from '../../components/section-separator';
+import PostTitle from '../../components/Post/post-title';
+import SectionSeparator from '../../components/SectionSeparator/section-separator';
+import PostContainer from '../../containers/PostContainer';
 
-export default function Post({ post, morePosts, preview }: any) {
+export default function Post({ post = null, morePosts }: any) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
   return post ? (
-    <Layout preview={preview}>
+    <>
       <Head>
         <title>
           {post.title} | Next.js Blog Example with {CMS_NAME}
@@ -30,24 +28,15 @@ export default function Post({ post, morePosts, preview }: any) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
-                slug={post.slug}
-              />
-              <PostBody content={post.content} />
-            </article>
+            <PostContainer {...post} />
             <SectionSeparator />
             {morePosts.length > 0 && <MoreStories posts={morePosts} />}
           </>
         )}
       </Container>
-    </Layout>
+    </>
   ) : (
-    <>No posts</>
+    <PostTitle>Loading…</PostTitle>
   );
 }
 
@@ -62,7 +51,7 @@ export async function getStaticProps({
   return {
     props: {
       preview,
-      post: data?.post,
+      post: data?.post || null,
       morePosts: data?.morePosts,
     },
   };
@@ -70,9 +59,6 @@ export async function getStaticProps({
 
 export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug();
-  console.log(
-    allPosts?.posts?.map((post: { slug: any }) => `/posts/${post.slug}`),
-  );
   return {
     paths:
       allPosts?.posts?.map((post: { slug: any }) => `/posts/${post.slug}`) ||

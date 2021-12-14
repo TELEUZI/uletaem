@@ -1,0 +1,52 @@
+@import "fonts";
+@import "consts";
+@import "mixins";
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: inherit;
+  line-height: normal;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 320px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: $MM;
+  overflow-x: hidden;
+  color: $main;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  display: inline-block;
+  list-style: none;
+}
+
+input,
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  background: transparent;
+  cursor: pointer;
+}

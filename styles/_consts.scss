@@ -1,0 +1,37 @@
+/*fonts*/
+$MM: "Montserrat Medium",
+sans-serif;
+$MB: "Montserrat Bold",
+sans-serif;
+$MSB: "Montserrat Semi Bold",
+sans-serif;
+$MEB: "Montserrat Extra Bold",
+sans-serif;
+
+/*color*/
+$green:#16B862;
+$green-light: #DAEFE8;
+$main:#413E53;
+$dark:#423F53;
+$grey:#6E6C7D;
+$grey2:#72707F;
+$grey3:#706E7D;
+$grey4:#9B9BA6;
+$grey5:#C3C3C9;
+$grey-light:#F5F7FA;
+$grey-light2: #F7F8FA;
+$pink-light:#FCD9E3;
+$white:#ffffff;
+$orange: #FF5E00;
+$orange-light: #F6E5DC;
+
+/*gradient*/
+$gradient-white: linear-gradient(135deg, #FFFFFF 0%, #FAFBFC 51.82%, #F5F7FA 100%);
+$gradient-green: linear-gradient(135deg, #66FF00 0%, #16B862 51.88%, #00858F 100%);
+$gradient-red: linear-gradient(135deg, #FF5E00 0%, #F54562 54.11%, #C32DE1 100%);
+
+/*shadow*/
+$shadow-white: 0px 1px 1px rgba(9, 13, 20, 0.06), -4px -4px 8px rgba(255, 255, 255, 0.4), 8px 8px 24px rgba(9, 13, 20, 0.06);
+$shadow-green: 0px 0px 1px rgba(22, 184, 98, 0.24), 0px 2px 4px -1px rgba(10, 70, 82, 0.12), 0px 16px 24px rgba(22, 184, 98, 0.24), 0px 8px 8px -4px rgba(22, 184, 98, 0.12);
+$shadow-red: 0px 0px 1px rgba(245, 69, 98, 0.24), 0px 2px 4px -1px rgba(27, 10, 82, 0.12), 0px 16px 24px rgba(245, 69, 98, 0.24), 0px 8px 8px -4px rgba(245, 69, 98, 0.12);
+$shadow-grey: 0px 1px rgba(9, 13, 20, 0.06), 0px 0px 8px rgba(255, 255, 255, 0.4), 0px 0px 24px rgba(9, 13, 20, 0.06);

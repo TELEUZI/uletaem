@@ -1,9 +1,9 @@
 import Link from 'next/link';
-import Avatar from './avatar';
-import Date from './date';
+import Avatar from '../User/avatar';
+import Date from '../common/date';
 import CoverImage from './cover-image';
-import { DEFAULT_POST_IMAGE_PATH } from '../lib/constants';
-import { Post } from '../models/post';
+import { DEFAULT_POST_IMAGE_PATH } from '../../lib/constants';
+import { Post } from '../../models/post';
 
 export default function PostPreview({
   title,

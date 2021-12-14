@@ -1,9 +1,9 @@
-import Avatar from './avatar';
-import Date from './date';
+import Avatar from '../User/avatar';
+import Date from '../common/date';
 import CoverImage from './cover-image';
 import PostTitle from './post-title';
-import { DEFAULT_POST_IMAGE_PATH } from '../lib/constants';
-import { Post } from '../models/post';
+import { DEFAULT_POST_IMAGE_PATH } from '../../lib/constants';
+import { Post } from '../../models/post';
 
 export default function PostHeader({
   title,
@@ -11,7 +11,7 @@ export default function PostHeader({
   date,
   author,
   slug,
-}: Omit<Post, 'excerpt'>) {
+}: Omit<Post, 'excerpt' | 'content'>) {
   return (
     <>
       <PostTitle>{title}</PostTitle>

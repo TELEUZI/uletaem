@@ -1,5 +1,5 @@
 import { Post } from '../models/post';
-import PostPreview from './post-preview';
+import PostPreview from './Post/post-preview';
 
 export default function MoreStories({ posts }: { posts: Post[] }) {
   return (
@@ -17,6 +17,7 @@ export default function MoreStories({ posts }: { posts: Post[] }) {
             author={post.author}
             slug={post.slug}
             excerpt={post.excerpt}
+            content={post.content}
           />
         ))}
       </div>

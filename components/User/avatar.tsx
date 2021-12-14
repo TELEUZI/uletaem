@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { DEFAULT_AVATAR_PATH } from '../lib/constants';
+import { DEFAULT_AVATAR_PATH } from '../../lib/constants';
 
 export default function Avatar({ name, picture }: any) {
   const url = picture?.url ?? (picture?.[0]?.url || DEFAULT_AVATAR_PATH);

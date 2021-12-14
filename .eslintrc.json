@@ -20,6 +20,7 @@
       { "endOfLine": "auto" },
       { "usePrettierrc": true }
     ],
+    "react/no-danger": "off",
     "jsx-a11y/anchor-is-valid": "off",
     "react/jsx-props-no-spreading": "off",
     "no-use-before-define": "off"

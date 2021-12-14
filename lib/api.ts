@@ -14,7 +14,6 @@ async function fetchAPI(query: string, { variables }: any = {}) {
 
   const json = await res.json();
   if (json.errors) {
-    console.error(json.errors);
     throw new Error('Failed to fetch API');
   }
 
@@ -38,7 +37,6 @@ export async function getPreviewPostBySlug(slug: string | string[]) {
       },
     },
   );
-  console.log(data, 'data');
   return data?.posts[0];
 }
 
@@ -50,7 +48,6 @@ export async function getAllPostsWithSlug() {
       }
     }
   `);
-  console.log(data);
   return data?.allPosts;
 }
 

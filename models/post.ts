@@ -5,4 +5,5 @@ export interface Post {
   excerpt: string;
   author?: { name: string; picture: string };
   slug: string;
+  content: string;
 }
