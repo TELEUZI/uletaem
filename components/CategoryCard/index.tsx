@@ -25,7 +25,7 @@ const Card = styled.div<{ imageUrl: string }>`
   ${({ imageUrl }) =>
     imageUrl &&
     css`
-      background-image: url(${imageUrl});
+      background-image: url('${imageUrl}');
     `}
 
   }

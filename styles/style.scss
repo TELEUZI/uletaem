@@ -1,6 +1,9 @@
 @import "fonts";
 @import "consts";
 @import "mixins";
+@import "swiper/swiper-bundle.min.css";
+@import '../../node_modules/swiper/swiper.min.css';
+
 
 * {
   margin: 0;

@@ -14,7 +14,6 @@
     "-": "0.0.1",
     "@badrap/bar-of-progress": "^0.1.2",
     "@gumgum/react-script-tag": "^0.0.3",
-    "@typescript-eslint/eslint-plugin": "^4.32.0",
     "autoprefixer": "10.3.6",
     "classnames": "^2.3.1",
     "cross-env": "^7.0.3",
@@ -33,7 +32,7 @@
     "react-icons": "^4.3.1",
     "sass": "^1.42.1",
     "styled-components": "^5.3.3",
-    "swiper": "^7.3.2",
+    "swiper": "7.0.0",
     "use-constant": "^1.1.0"
   },
   "devDependencies": {
@@ -41,6 +40,7 @@
     "@types/react-burger-menu": "^2.8.2",
     "@types/react-helmet": "^6.1.4",
     "@types/styled-components": "^5.1.15",
+    "@types/swiper": "^5.4.3",
     "@typescript-eslint/eslint-plugin": "4.3.0",
     "babel-plugin-styled-components": "^2.0.2",
     "eslint": "^7.32.0",
