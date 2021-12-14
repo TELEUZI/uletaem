@@ -1,5 +1,4 @@
 import Link from 'next/link';
-// import { slide as Menu } from 'react-burger-menu';
 import { useRef, useContext } from 'react';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import styles from './header.module.scss';

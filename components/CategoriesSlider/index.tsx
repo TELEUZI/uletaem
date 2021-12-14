@@ -35,8 +35,6 @@ const CategoriesSwiper = () => {
             spaceBetween: 50,
           },
         }}
-        onSlideChange={() => console.log('slide change')}
-        onSwiper={swiper => console.log(swiper)}
       >
         <SwiperSlide>
           <CategoryCard imageUrl="../../images/alone.jpg" text="В одиночку" />

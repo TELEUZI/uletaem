@@ -5,15 +5,12 @@ const Card = styled.div<{ imageUrl: string }>`
   position: relative;
   overflow: hidden;
   display: flex;
-
-  width: 300px; /* Box dimensions */
+  min-width: 250px;
   height: 400px;
-
-  border-radius: 4px; /* Styling */
+  border-radius: 4px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
     0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.56s ease-in-out; /* Animation */
-  /* background-color: rgba(0,0,0,.2); /* for debugging */
+  transition: box-shadow 0.56s ease-in-out;
   &:hover {
     cursor: pointer;
     box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),

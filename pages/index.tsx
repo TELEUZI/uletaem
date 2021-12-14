@@ -3,11 +3,7 @@ import React from 'react';
 import Container from '../components/Layout/container';
 import HeroPost from '../components/Post/hero-post';
 import MoreStories from '../components/more-stories';
-import {
-  CMS_NAME,
-  DEFAULT_AVATAR_PATH,
-  DEFAULT_POST_IMAGE_PATH,
-} from '../lib/constants';
+import { DEFAULT_AVATAR_PATH, DEFAULT_POST_IMAGE_PATH } from '../lib/constants';
 import { Post } from '../models/post';
 import '../styles/Home.module.css';
 import Alert from '../components/alert';
@@ -29,16 +25,11 @@ export function Home({
       <Alert preview={preview} />
 
       <Head>
-        <title>Next.js Blog Example with {CMS_NAME}</title>
+        <title>Uletaem | Блог про путешествия</title>
       </Head>
+      <Intro />
+
       <Container>
-        <Intro />
-        <div
-          dangerouslySetInnerHTML={{
-            __html:
-              '<div><script charset="utf-8" src="//www.travelpayouts.com/widgets/b214fdcc3b51649076e3183a7703edea.js?v=2183" async></script></div>',
-          }}
-        />
         <CategoriesSwiper />
         {heroPost && (
           <HeroPost

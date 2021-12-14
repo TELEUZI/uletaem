@@ -4,7 +4,7 @@ import Container from './Layout/container';
 import { EXAMPLE_PATH } from '../lib/constants';
 
 export default function Alert({ preview }: any) {
-  return (
+  return preview ? (
     <div
       className={cn('border-b', {
         'bg-accent-7 border-accent-7 text-white': preview,
@@ -37,5 +37,5 @@ export default function Alert({ preview }: any) {
         </div>
       </Container>
     </div>
-  );
+  ) : null;
 }

@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import '../styles/main.css';
 import '../styles/normalize.css';
 import '../styles/header.scss';
+import '../styles/style.scss';
 import { SessionProvider } from 'next-auth/react';
 import type { AppProps } from 'next/app';
 import ProgressBar from '@badrap/bar-of-progress';

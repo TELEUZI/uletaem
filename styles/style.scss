@@ -1,9 +1,6 @@
 @import "fonts";
 @import "consts";
 @import "mixins";
-@import "swiper/swiper-bundle.min.css";
-@import '../../node_modules/swiper/swiper.min.css';
-
 
 * {
   margin: 0;
@@ -52,4 +49,49 @@ button {
 button {
   background: transparent;
   cursor: pointer;
+}
+
+.title {
+  font: 36px/36px $MB;
+  margin-bottom: 32px;
+
+  &__description {
+    padding: 4px 8px;
+    border-radius: 12px;
+    width: fit-content;
+    margin-bottom: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    font-family: $MM;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 16px;
+  }
+}
+
+.fly {
+  color: $orange;
+}
+
+.intro {
+  &__heading {
+    font: 64px/36px $MB;
+    color: #fff;
+    text-align: center;
+    filter: drop-shadow(0.35rem 0.35rem 0.4rem rgba(0, 0, 0, 0.5));
+    margin-bottom: 20px;
+  }
+
+  &__background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: 1000px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./../images/woman-traveler1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 }

@@ -1,6 +1,7 @@
+import { User } from 'next-auth';
 import Link from 'next/link';
 import { FaBars } from 'react-icons/fa';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Nav = styled.nav`
   height: 80px;
@@ -9,7 +10,31 @@ export const Nav = styled.nav`
   padding: 0.5rem calc((100vw - 1000px) / 2);
   z-index: 10;
 `;
-
+export const AuthContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+`;
+export const UserName = styled.span``;
+export const UserIcon = styled.img<User>`
+  ${props =>
+    props.image &&
+    css`
+      background-image: url(${props.image});
+    `}
+  min-width: 50px;
+  min-height: 50px;
+  background-size: cover;
+  background-position: top center;
+  border-radius: 50%;
+`;
+export const UserContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+`;
 export const NavLink = styled(Link)`
   color: #fff;
   display: flex;

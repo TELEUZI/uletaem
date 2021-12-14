@@ -1,6 +1,17 @@
 import React from 'react';
+import { DEFAULT_AVATAR_PATH } from '../../../lib/constants';
 import BurgerButton from './BurgerButton';
-import { Nav, NavLink, NavMenu, NavBtn, NavMenuItem } from './NavbarElements';
+import {
+  Nav,
+  NavLink,
+  NavMenu,
+  NavBtn,
+  NavMenuItem,
+  UserIcon,
+  UserName,
+  UserContainer,
+  AuthContainer,
+} from './NavbarElements';
 
 interface User {
   name: string | null;
@@ -17,6 +28,7 @@ const Navbar = ({
   onSignOut,
   auth: { isAuth, user },
 }: NavBarProps) => {
+  console.log(user);
   return (
     <>
       <BurgerButton />
@@ -39,13 +51,13 @@ const Navbar = ({
           </NavMenuItem>
         </NavMenu>
         {isAuth ? (
-          <>
-            {' '}
-            <p>
-              {user?.name} {user?.email}
-            </p>
+          <AuthContainer>
+            <UserContainer>
+              <UserIcon image={user?.image || DEFAULT_AVATAR_PATH} />
+              <UserName>{user?.name}</UserName>
+            </UserContainer>
             <NavBtn onClick={onSignOut}>Выйти</NavBtn>
-          </>
+          </AuthContainer>
         ) : (
           <NavBtn onClick={onSignIn}>Войти / Регистрация</NavBtn>
         )}
