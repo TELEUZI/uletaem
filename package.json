@@ -6,7 +6,7 @@
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "postbuild": "next-sitemap --config next-sitemap-config.js",
-    "start": "next start",
+    "start": "next --openssl-legacy-provider start",
     "lint": "next lint",
     "lint:fix": "next lint --fix"
   },
