@@ -1,5 +1,4 @@
 import React from 'react';
-import CategoriesSwiper from '../../components/CategoriesSlider';
 import CategoryCard from '../../components/CategoryCard';
 import Container from '../../components/Layout/container';
 
