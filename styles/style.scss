@@ -136,3 +136,44 @@ button {
   padding-top: 60px;
   gap: 30px;
 }
+
+.map {
+  padding-top: 72px;
+  padding-bottom: 68px;
+
+  .title {
+    position: relative;
+    text-align: center;
+    margin: 0px auto 16px auto;
+
+    &__colored {
+      background: $gradient-green;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &__description {
+      text-align: center;
+      margin: 0 auto;
+      color: $green;
+    }
+  }
+
+  .advantages__description {
+    font-size: 16px;
+    line-height: 28px;
+    color: $grey2;
+    margin-bottom: 24px;
+    text-align: center;
+  }
+}
+
+.places-page {
+  padding-top: 10px;
+
+  .video {
+    position: relative;
+    height: 500px;
+  }
+}
