@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React from 'react';
 import { FaRegPaperPlane } from 'react-icons/fa';
 import styles from './contacts-page.module.css';
@@ -5,6 +6,9 @@ import styles from './contacts-page.module.css';
 const Contacts = () => {
   return (
     <section className="contacts-page" id="contact">
+      <Head>
+        <title>Uletaem | Контакты</title>
+      </Head>
       <h2 className={`${styles['section-header']} title`}>Контакты</h2>
       <div className={styles['contact-wrapper']}>
         <form id="contact-form" className={styles['form-horizontal']}>

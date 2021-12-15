@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import React from 'react';
 import CategoryCard from '../../components/CategoryCard';
 import Container from '../../components/Layout/container';
@@ -5,6 +6,9 @@ import Container from '../../components/Layout/container';
 const Contacts = () => {
   return (
     <Container>
+      <Head>
+        <title>Uletaem | Категории</title>
+      </Head>
       <div className="categories-swiper">
         <CategoryCard imageUrl="../../images/friends.jpeg" text="С друзьями" />
 
