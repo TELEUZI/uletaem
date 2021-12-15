@@ -59,19 +59,21 @@ const Contacts = () => {
           <ul className={styles['contact-list']}>
             <li className={styles['list-item']}>
               <i className={styles['fa fa-map-marker fa-2x']}>
-                <span className="contact-text place">City, State</span>
-              </i>
-            </li>
-
-            <li className={styles['list-item']}>
-              <i className={styles['fa fa-phone fa-2x']}>
-                <span className="contact-text phone">
-                  <a href="tel:1-212-555-5555" title="Give me a call">
-                    (212) 555-2368
-                  </a>
+                <span className="contact-text place">
+                  Минск, Республика Беларусь
                 </span>
               </i>
             </li>
+
+            {/* <li className={styles['list-item']}>
+              <i className={styles['fa fa-phone fa-2x']}>
+                <span className="contact-text phone">
+                  <a href="tel:1-212-555-5555" title="Give me a call">
+                    375(25) 555-2368
+                  </a>
+                </span>
+              </i>
+            </li> */}
 
             <li className={styles['list-item']}>
               <i className={styles['fa fa-envelope fa-2x']}>
@@ -85,7 +87,7 @@ const Contacts = () => {
           </ul>
           <hr className={styles.separator} />
 
-          <div className="copyright">&copy; ALL OF THE RIGHTS RESERVED</div>
+          {/* <div className="copyright">&copy; ALL OF THE RIGHTS RESERVED</div> */}
         </div>
       </div>
     </section>

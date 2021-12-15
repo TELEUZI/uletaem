@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
-    "build": "next build",
+    "build": "export NODE_OPTIONS=--openssl-legacy-provider; next build",
     "postbuild": "next-sitemap --config next-sitemap-config.js",
     "start": "NODE_OPTIONS=--openssl-legacy-provider next start",
     "lint": "next lint",
