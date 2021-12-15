@@ -4,9 +4,8 @@ import styles from './contacts-page.module.css';
 
 const Contacts = () => {
   return (
-    <section id="contact">
-      <h1 className={styles['section-header']}>Contact</h1>
-
+    <section className="contacts-page" id="contact">
+      <h2 className={`${styles['section-header']} title`}>Контакты</h2>
       <div className={styles['contact-wrapper']}>
         <form id="contact-form" className={styles['form-horizontal']}>
           <div className={styles['form-group']}>
@@ -82,30 +81,6 @@ const Contacts = () => {
                   </a>
                 </span>
               </i>
-            </li>
-          </ul>
-
-          <hr className={styles.separator} />
-          <ul className={styles['social-media-list']}>
-            <li>
-              <a href="#" target="_blank" className={styles['contact-icon']}>
-                <i className={styles['fa fa-github']} aria-hidden="true" />
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank" className={styles['contact-icon']}>
-                <i className={styles['fa fa-codepen']} aria-hidden="true" />
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank" className={styles['contact-icon']}>
-                <i className={styles['fa fa-twitter']} aria-hidden="true" />
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank" className={styles['contact-icon']}>
-                <i className={styles['fa fa-instagram']} aria-hidden="true" />
-              </a>
             </li>
           </ul>
           <hr className={styles.separator} />

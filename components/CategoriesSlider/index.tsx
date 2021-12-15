@@ -17,7 +17,7 @@ const CategoriesSwiper = () => {
           nextEl: '.arrow-right',
           prevEl: '.arrow-left',
         }}
-        loop
+        // loop
         pagination={{
           clickable: true,
         }}
@@ -41,33 +41,21 @@ const CategoriesSwiper = () => {
         </SwiperSlide>
         <SwiperSlide>
           <CategoryCard
-            imageUrl="../../images/solo-trip.jfif"
-            text="В одиночку"
+            imageUrl="../../images/friends.jpeg"
+            text="С друзьями"
           />
         </SwiperSlide>
         <SwiperSlide>
-          <CategoryCard
-            imageUrl="../../images/solo-trip.jfif"
-            text="В одиночку"
-          />
+          <CategoryCard imageUrl="../../images/sea.jpg" text="Море" />
         </SwiperSlide>
         <SwiperSlide>
-          <CategoryCard
-            imageUrl="../../images/solo-trip.jfif"
-            text="В одиночку"
-          />
+          <CategoryCard imageUrl="../../images/gor.jpg" text="Горы" />
         </SwiperSlide>
         <SwiperSlide>
-          <CategoryCard
-            imageUrl="../../images/solo-trip.jfif"
-            text="В одиночку"
-          />
+          <CategoryCard imageUrl="../../images/forest.jpg" text="Лес" />
         </SwiperSlide>
         <SwiperSlide>
-          <CategoryCard
-            imageUrl="../../images/solo-trip.jfif"
-            text="В одиночку"
-          />
+          <CategoryCard imageUrl="../../images/pust.jpg" text="Пустыни" />
         </SwiperSlide>
       </Swiper>
       <div className="arrow arrow-right" />

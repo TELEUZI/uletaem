@@ -3,7 +3,6 @@ import ErrorPage from 'next/error';
 import React from 'react';
 import Head from 'next/head';
 import { getPostAndMorePosts, getAllPostsWithSlug } from '../../lib/api';
-import { CMS_NAME } from '../../lib/constants';
 import Container from '../../components/Layout/container';
 import MoreStories from '../../components/more-stories';
 import PostTitle from '../../components/Post/post-title';
@@ -18,14 +17,12 @@ export default function Post({ post = null, morePosts }: any) {
   return post ? (
     <>
       <Head>
-        <title>
-          {post.title} | Next.js Blog Example with {CMS_NAME}
-        </title>
+        <title>{post.title} | Uletaem</title>
         <meta property="og:image" content={post.ogImage?.url} />
       </Head>
       <Container>
         {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
+          <PostTitle>Загрузка...</PostTitle>
         ) : (
           <>
             <PostContainer {...post} />
@@ -36,7 +33,7 @@ export default function Post({ post = null, morePosts }: any) {
       </Container>
     </>
   ) : (
-    <PostTitle>Loading…</PostTitle>
+    <PostTitle>Загрузка...</PostTitle>
   );
 }
 

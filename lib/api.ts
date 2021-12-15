@@ -44,11 +44,23 @@ export async function getAllPostsWithSlug() {
   const data = await fetchAPI(`
     {
       posts {
+        title
         slug
+        excerpt
+        date
+        coverImage {
+          url
+        }
+        author {
+          name
+          picture {
+            url
+          }
+        }
       }
     }
   `);
-  return data?.allPosts;
+  return data?.posts;
 }
 
 export async function getAllPostsForHome(preview: any): Promise<Post[]> {

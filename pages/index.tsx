@@ -30,7 +30,9 @@ export function Home({
       <Intro />
 
       <Container>
-        <CategoriesSwiper />
+        <div className="categories-swiper">
+          <CategoriesSwiper />
+        </div>
         {heroPost && (
           <HeroPost
             title={heroPost.title}

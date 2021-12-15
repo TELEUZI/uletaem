@@ -30,7 +30,7 @@ const PostContainer = ({
         />
         <PostBody content={content} />
       </article>
-      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />)
+      <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
     </>
   );
 };

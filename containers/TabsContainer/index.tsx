@@ -1,82 +1,62 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
-import { Helmet } from 'react-helmet';
 import { Tabs, Tab, Panel } from '../../components/Tab';
 
-const A = () => (
-  <script
-    charSet="utf-8"
-    src="//www.travelpayouts.com/widgets/b214fdcc3b51649076e3183a7703edea.js?v=2183"
-    async
-  />
-);
-const useScript = (url: string) => {
-  useEffect(() => {
-    const script = document.createElement('script');
-
-    script.src = url;
-    script.async = true;
-
-    document.appendChild(script);
-
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, [url]);
-};
-
 const TabsContainer = () => {
-  // const script = useScript(
-  //   '//www.travelpayouts.com/widgets/b214fdcc3b51649076e3183a7703edea.js?v=2183',
-  //   ref,
-  // );
   return (
     <Tabs>
       <div className="tabs">
         <div className="tab-list">
-          <Tab>Tab 1</Tab>
+          <Tab>О нас</Tab>
 
-          <Tab>Tab 2</Tab>
+          <Tab>ЧАВО</Tab>
 
-          <Tab>Tab 3</Tab>
+          <Tab>Задать вопрос</Tab>
         </div>
-
-        {/* <div className="tab-progress" />
-        {tabs.map(tab => (
-          <Panel>{tab}</Panel>
-        ))} */}
         <Panel>
-          <div>
-            <Helmet>
-              <script
-                src="//www.travelpayouts.com/widgets/b214fdcc3b51649076e3183a7703edea.js?v=2183"
-                type="text/javascript"
-                async
-              />
-            </Helmet>
-          </div>
+          Мы посетили 32 страны Европы, Азии, Африки, Ближнего Востока и СНГ, а
+          во многих и жили от месяца до года Мы провели в путешествиях 1'000
+          дней Мы плавали в Черном море, Средиземном море, Адриатическом море,
+          Балеарском море, Балтийском море, Южно-Китайском море, Красном море,
+          Андаманском море, Персидском заливе, Сиамском заливе, Индийском
+          океане, Мёртвом море, Атлантическом океане
         </Panel>
         <Panel>
-          <div>
-            <Helmet>
-              <script
-                src="//www.travelpayouts.com/widgets/b214fdcc3b51649076e3183a7703edea.js?v=2183"
-                type="text/javascript"
-                async
-              />
-            </Helmet>
-          </div>
+          Почему мы путешествуем? <br />
+          <br />
+          Мы путешествуем, потому что считаем, что жизнь в этом Мире не
+          ограничивается проживанием в четырех стенах квартиры, не должна
+          проходить в стремлении подняться по карьерной лестнице и не
+          заканчивается с рождением детей...
         </Panel>
         <Panel>
-          <iframe title="if">
-            <div
-              // eslint-disable-next-line react/no-danger
-              dangerouslySetInnerHTML={{
-                __html:
-                  '<div><script charset="utf-8" src="//www.travelpayouts.com/widgets/b214fdcc3b51649076e3183a7703edea.js?v=2183" async></script></div>',
-              }}
+          {' '}
+          <form
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '20px',
+              justifyContent: 'center',
+              flex: 1,
+            }}
+            action=""
+          >
+            <input
+              className="tabs-input"
+              style={{ minHeight: '40px' }}
+              type="text"
+              placeholder="email"
             />
-          </iframe>
+            <textarea
+              className="tabs-input"
+              style={{ minHeight: '200px', minWidth: '25%' }}
+              name=""
+              placeholder="Ваше сообщение"
+              id=""
+            />
+            <button type="submit">Отправить</button>
+          </form>
         </Panel>
       </div>
     </Tabs>

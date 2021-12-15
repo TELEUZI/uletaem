@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-
+import Link from 'next/link';
 import styled, { css } from 'styled-components';
 import MenuContext from '../../contexts/nav-context';
 
@@ -55,10 +55,24 @@ const SideMenu = () => {
   const { isMenuOpen } = useContext(MenuContext);
   return (
     <Menu open={isMenuOpen}>
-      <MenuLink href="/">Главная</MenuLink>
-      <MenuLink href="/articles">Статьи</MenuLink>
-      <MenuLink href="/about">О сайте</MenuLink>
-      <MenuLink href="/contact">Контакт</MenuLink>
+      <Link href="/">
+        <MenuLink>Главная</MenuLink>
+      </Link>
+      <Link href="/posts">
+        <MenuLink>Статьи</MenuLink>
+      </Link>
+      <Link href="/places">
+        <MenuLink>Места</MenuLink>
+      </Link>
+      <Link href="/categories">
+        <MenuLink>Категории</MenuLink>
+      </Link>
+      <Link href="/about">
+        <MenuLink>О нас</MenuLink>
+      </Link>
+      <Link href="/contact">
+        <MenuLink>Контакт</MenuLink>
+      </Link>
     </Menu>
   );
 };

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 // eslint-disable-next-line no-unused-vars
-type EventHandler = (event: any) => void;
+type EventHandler = (event: Event) => void;
 const useOnClickOutside = (
   ref: { current: HTMLElement | null },
   handler: EventHandler,

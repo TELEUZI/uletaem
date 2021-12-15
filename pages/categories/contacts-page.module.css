@@ -13,7 +13,7 @@
   text-align: center;
   margin: 0 auto;
   padding: 40px 0;
-  /* font: 300 60px 'Oswald', sans-serif; */
+  font: 300 60px 'Oswald', sans-serif;
   color: #fff;
   text-transform: uppercase;
   letter-spacing: 6px;
@@ -22,7 +22,6 @@
 .contact-wrapper {
   display: flex;
   flex-direction: row;
-  gap: 40px;
   justify-content: space-between;
   margin: 0 auto;
   padding: 20px;
@@ -159,6 +158,7 @@
 /* Location, Phone, Email Section */
 .contact-list {
   list-style-type: none;
+  margin-left: -30px;
   padding-right: 20px;
 }
 

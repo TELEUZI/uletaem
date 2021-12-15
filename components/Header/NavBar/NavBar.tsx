@@ -28,14 +28,13 @@ const Navbar = ({
   onSignOut,
   auth: { isAuth, user },
 }: NavBarProps) => {
-  console.log(user);
   return (
     <>
       <BurgerButton />
       <Nav>
         <NavMenu>
           <NavMenuItem>
-            <NavLink href="/arcticles">Статьи</NavLink>
+            <NavLink href="/posts">Статьи</NavLink>
           </NavMenuItem>
           <NavMenuItem>
             <NavLink href="/categories">Категории</NavLink>
